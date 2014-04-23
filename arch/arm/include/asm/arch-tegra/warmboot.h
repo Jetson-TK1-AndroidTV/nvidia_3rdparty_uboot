@@ -8,6 +8,8 @@
 #ifndef _WARM_BOOT_H_
 #define _WARM_BOOT_H_
 
+#include <asm/arch-tegra/sdram_param.h>
+
 #define STRAP_OPT_A_RAM_CODE_SHIFT	4
 #define STRAP_OPT_A_RAM_CODE_MASK	(0xf << STRAP_OPT_A_RAM_CODE_SHIFT)
 
@@ -218,8 +220,6 @@ void wb_start(void);	/* Start of WB assembly code */
 void wb_end(void);	/* End of WB assembly code */
 
 /* Common routines for T114 and T124 SOCs */
-
-struct sdram_params;
 
 /*
  * t1x4_wb_save_sdram_params():

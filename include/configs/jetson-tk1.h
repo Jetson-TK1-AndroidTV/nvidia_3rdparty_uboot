@@ -33,6 +33,9 @@
 #define EEPROM_I2C_ADDRESS     0x56
 #define EEPROM_SERIAL_OFFSET   0x04
 #define NUM_SERIAL_ID_BYTES    8
+
+#ifdef CONFIG_TEGRA_LP0
+#define CONFIG_TEGRA124_LP0
 #endif
 
 /* High-level configuration options */
@@ -42,6 +45,9 @@
 /* Board-specific serial config */
 #define CONFIG_TEGRA_ENABLE_UARTD
 #define CONFIG_SYS_NS16550_COM1		NV_PA_APB_UARTD_BASE
+
+#define CONFIG_BOARD_EARLY_INIT_F
+#define CONFIG_BOARD_LATE_INIT
 
 /* I2C */
 #define CONFIG_SYS_I2C_TEGRA
