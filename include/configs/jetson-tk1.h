@@ -19,6 +19,7 @@
 
 #include "tegra124-common.h"
 
+<<<<<<< HEAD
 #ifndef CONFIG_SPL_BUILD
 #define CONFIG_OF_LIBFDT
 #define CONFIG_OF_BOARD_SETUP
@@ -33,6 +34,11 @@
 #define EEPROM_I2C_ADDRESS     0x56
 #define EEPROM_SERIAL_OFFSET   0x04
 #define NUM_SERIAL_ID_BYTES    8
+
+#ifdef CONFIG_SYS_MALLOC_LEN
+#undef CONFIG_SYS_MALLOC_LEN
+#endif
+#define CONFIG_SYS_MALLOC_LEN		(128 << 20)	/* 128MB for fastboot bounce_buffer  */
 
 #ifdef CONFIG_TEGRA_LP0
 #define CONFIG_TEGRA124_LP0
